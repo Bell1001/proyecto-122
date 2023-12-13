@@ -1,5 +1,9 @@
+import { useNavigate } from 'react-router-dom'
 
 function Footer() {
+
+  const navigate = useNavigate()
+
   return (
     <footer className="pie text-light p-5 ">
       <div className="container">
@@ -26,7 +30,11 @@ function Footer() {
           </div>
           <div className="col-md-4">
             <h5>Contacto</h5>
-            <form>
+            <form onSubmit={e => {
+              e.preventDefault()
+              alert('Registro exitoso')
+              navigate('/')
+            }} >
               <div className="mb-3">
                 <label htmlFor="correo" className="form-label">Correo electrónico</label>
                 <input type="email" className="form-control" id="correo" />
