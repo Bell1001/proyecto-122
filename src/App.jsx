@@ -27,6 +27,7 @@ function App() {
       <Menu />
       <Routes>
         <Route index element={<InicioPage />} />
+        <Route path='*' element={<InicioPage />} />
         <Route path='empresa/:id' element={<EmpresaPage />} />
         <Route path='/user' element={<UserPage info={armando} />} />
       </Routes>
